@@ -48,6 +48,17 @@ describe('template spec', () => {
       cy.visit('https://www.demoblaze.com/index.html')
       HomeActions.clickProducto('Iphone 6 32gb')
       cy.wait(10000)
+
+      //3a prueba HOME
+
+      // variables por separado
+
+      cy.visit('https://www.demoblaze.com/index.html')
+      HomeActions.clickProducto('Iphone 6 32gb')
+      cy.wait(10000)
+
+      //4a DETALLES
+      // falta testear que se añade a la carta
      
 
 
