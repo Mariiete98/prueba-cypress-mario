@@ -1,4 +1,4 @@
-import { DetallesElements } from "./login.elements";
+import { DetallesElements } from "./detalles.elements";
 
 export class DetallesActions{
     static clickAnadirCarta(){

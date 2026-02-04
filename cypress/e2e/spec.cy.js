@@ -1,3 +1,4 @@
+import { CartaActions } from "../support/paginas/carta/carta.actions";
 import { HomeActions } from "../support/paginas/home/home.actions";
 import { LoginActions } from "../support/paginas/login/login.actions";
 import { LoginData } from "../support/paginas/login/login.data";
@@ -40,25 +41,27 @@ describe('template spec', () => {
       cy.wait(10000)
       */
 
+      //¿SIGN UP?
 
       //3a prueba HOME
-
-      // variables por separado
 
       cy.visit('https://www.demoblaze.com/index.html')
       HomeActions.clickProducto('Iphone 6 32gb')
       cy.wait(10000)
 
-      //3a prueba HOME
-
-      // variables por separado
-
-      cy.visit('https://www.demoblaze.com/index.html')
-      HomeActions.clickProducto('Iphone 6 32gb')
-      cy.wait(10000)
+      
 
       //4a DETALLES
       // falta testear que se añade a la carta
+     
+      //5a CARTA
+      const usuario = 'random01';
+      const contrasena = 'random01'
+      cy.visit('https://www.demoblaze.com/index.html')
+      cy.wait(20000) // Esperar para elegir
+      CartaActions.clickEliminar('Nokia lumia 1520')
+      cy.wait(20000) 
+      
      
 
 

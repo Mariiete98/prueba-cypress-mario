@@ -1,3 +1,5 @@
+import { SignupElementsElements } from "./signuo.elements";
+
 export class SignupActions {
     static insertarUsuario(username){
         SignupElements.obtenerCampos.username.invoke('val', username)
