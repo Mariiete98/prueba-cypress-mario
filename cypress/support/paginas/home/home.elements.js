@@ -5,10 +5,10 @@ export class HomeElements {
             return cy.contains("a", "Phones");
         },
         get laptop() {
-            return cy.get("a", "Laptops");
+            return cy.contains("a", "Laptops");
         },
         get monitor() {
-            return cy.get("a", "Monitors");
+            return cy.contains("a", "Monitors");
         },
         };
     }
