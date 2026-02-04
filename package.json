@@ -1,0 +1,24 @@
+{
+  "name": "prueba-cypress-mario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mariiete98/prueba-cypress-mario.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mariiete98/prueba-cypress-mario/issues"
+  },
+  "homepage": "https://github.com/Mariiete98/prueba-cypress-mario#readme",
+  "devDependencies": {
+    "cypress": "^15.10.0"
+  }
+}
