@@ -1,10 +1,10 @@
+import { HomeActions } from "../support/paginas/home/home.actions";
 import { LoginActions } from "../support/paginas/login/login.actions";
 import { LoginData } from "../support/paginas/login/login.data";
 
 describe('template spec', () => {
   it('passes', () => {
    
-
     // 1a prueba
     /* 
     cy.visit('https://www.demoblaze.com/')
@@ -24,7 +24,7 @@ describe('template spec', () => {
       */
 
       //2a prueba
-
+      /*
       // variables por separado
       const usuario = 'random01';
       const contrasena = 'random01'
@@ -38,7 +38,17 @@ describe('template spec', () => {
       cy.get('a#nameOfUser').should('contain.text', usuario)
 
       cy.wait(10000)
+      */
 
+
+      //3a prueba HOME
+
+      // variables por separado
+
+      cy.visit('https://www.demoblaze.com/index.html')
+      HomeActions.clickProducto('Iphone 6 32gb')
+      cy.wait(10000)
+     
 
 
 
