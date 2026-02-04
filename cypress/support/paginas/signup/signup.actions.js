@@ -1,4 +1,4 @@
-import { SignupElementsElements } from "./signuo.elements";
+import { SignupElements } from "./signuo.elements";
 
 export class SignupActions {
     static insertarUsuario(username){
