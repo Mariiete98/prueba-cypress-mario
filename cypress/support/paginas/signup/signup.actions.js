@@ -8,7 +8,7 @@ export class SignupActions {
         SignupElements.obtenerCampos.password.invoke('val', password)
     }
     static clickSignup(){
-        SingupElements.obtenerBotones.signup.click()
+        SignupElements.obtenerBotones.signup.click()
     }
 
     // podrian ir en otro archivo para optimizar
