@@ -65,7 +65,5 @@ describe('template spec', () => {
      //6a Place Order sin 
 
 
-
-
   })
 })
