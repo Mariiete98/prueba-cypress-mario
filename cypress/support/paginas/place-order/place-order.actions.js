@@ -6,7 +6,7 @@ export class PlaceOrderActions {
     }
 
     static insertCountry(name){
-        PlaceOrderElements.campos.country.invoke("val", counry);
+        PlaceOrderElements.campos.country.invoke("val", country);
     }
 
     static insertCity(name){
@@ -33,6 +33,15 @@ export class PlaceOrderActions {
 
     static clickPurchase(){
         PlaceOrderElements.botones.purchase.click();
+    }
+
+    static insertOrderInformation(data){
+        this.insertName(data.name)
+        this.insertCountry(data.country)
+        this.insertCity(data.city)
+        this.insertCreditCard(data.creditCardNumber)
+        this.insertMonth(data.month)
+        this.insertYear(data.year)
     }
 
 }

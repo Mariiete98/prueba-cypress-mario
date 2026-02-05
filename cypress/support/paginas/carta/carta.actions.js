@@ -8,5 +8,15 @@ export class CartaActions{
     static verifyProductAdded(){
         CartaElements.links.delete(producto).should('be.visible')
     }
+
+    static verifyCartPageIsShow(){
+        cy.url().should('include', 'cart.html')
+    }
+
+    static clickOnPlaceOrderButton(){
+        CartaElements.obtenerBotones.placeOrder.click();
+    }
+
+
     
 }
