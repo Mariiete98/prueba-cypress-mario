@@ -1,0 +1,31 @@
+import { CommonPageActions } from "../../support/paginas/common-page/common-page.actions";
+import { CommonPageData } from "../../support/paginas/common-page/common-page.data";
+import { LoginActions } from "../../support/paginas/login/login.actions";
+import { LoginData } from "../../support/paginas/login/login.data";
+import { Logger } from "../../support/util/logger";
+
+describe(CommonPageData.testSuites.autenticacion, ()=>{ //este nombre se usara en muchos archivos, por eso se hace variable en common page
+    it("Inicio de sesión válido", ()=>{
+        Logger.stepNumber(1)
+        Logger.step('Navegar a la página de inicio')
+        CommonPageActions.navigateToDemoBlaze();
+
+        Logger.stepNumber(2)
+        Logger.step('Hacer click en Log In en la barra de navegación')
+        CommonPageActions.clickOnLoginOption();
+
+        Logger.stepNumber(3)
+        Logger.step('Ingresar un nombre de usuario y contraseña válidos')
+        LoginActions.insertarUsuario(LoginData.validarCredenciales.username)
+        LoginActions.insertarPassword(LoginData.validarCredenciales.password)
+
+        Logger.stepNumber(4)
+        Logger.step('Hacer clic en Log In para iniciar sesión')
+        LoginActions.clickLogin();
+        cy.wait(20000)
+        Logger.verification('Verificar que se redirige al usuario a la página de inicio')
+        CommonPageActions.verifySignedUser(LoginData.validarCredenciales.username);
+        
+    });
+
+});

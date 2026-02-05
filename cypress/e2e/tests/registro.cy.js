@@ -2,11 +2,12 @@ import { CommonPageActions } from "../../support/paginas/common-page/common-page
 import { CommonPageData } from "../../support/paginas/common-page/common-page.data";
 import { Logger } from "../../support/util/logger";
 import { SignupActions } from "../../support/paginas/signup/signup.actions";
+import { LoginData } from "../../support/paginas/login/login.data";
 
 const user = CommonPageActions.generateRandomString();
 const password = CommonPageActions.generateRandomString(7);
 
-const existingUser = 'random01'
+const existingUser = LoginData.validarCredenciales.username
 
 describe(CommonPageData.testSuites.registro, ()=>{ //este nombre se usara en muchos archivos, por eso se hace variable en common page
     it("Registro de usuario válido", ()=>{
