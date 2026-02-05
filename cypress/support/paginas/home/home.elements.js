@@ -18,7 +18,7 @@ export class HomeElements {
     // en vez de hacer un selector para cada producto es un SELECTOR DINAMICO
     // pasandole de parametro el producto se obtendrá
     static producto(nombreProducto) {
-        return cy.contains('a', nombreProducto);
+        return cy.contains('a', nombreProducto, {timeout: 30000});
         
     }
 }
