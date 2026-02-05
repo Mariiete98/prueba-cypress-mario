@@ -2,6 +2,8 @@ import { CartaActions } from "../support/paginas/carta/carta.actions";
 import { HomeActions } from "../support/paginas/home/home.actions";
 import { LoginActions } from "../support/paginas/login/login.actions";
 import { LoginData } from "../support/paginas/login/login.data";
+import { Logger } from "../support/util/logger";
+
 
 describe('template spec', () => {
   it('passes', () => {
@@ -44,10 +46,11 @@ describe('template spec', () => {
       //¿SIGN UP?
 
       //3a prueba HOME
-
+      /*
       cy.visit('https://www.demoblaze.com/index.html')
       HomeActions.clickProducto('Iphone 6 32gb')
       cy.wait(10000)
+      */
 
       
 
@@ -55,14 +58,35 @@ describe('template spec', () => {
       // falta testear que se añade a la carta
      
       //5a CARTA
+      /*
       const usuario = 'random01';
       const contrasena = 'random01'
       cy.visit('https://www.demoblaze.com/index.html')
       cy.wait(20000) // Esperar para elegir
       CartaActions.clickEliminar('Nokia lumia 1520')
-      cy.wait(20000) 
+      cy.wait(20000)*/ 
       
-     //6a Place Order sin 
+      //6a Place Order sin 
+      //7a Gracias
+      //8a Common
+
+      //9a
+      const usuario = 'random01';
+      const contrasena = 'random01';
+      
+      Logger.stepNumber(1)
+      Logger.step('Navigate to Demoblze page')
+      cy.visit('https://www.demoblaze.com/index.html')
+
+      Logger.stepNumber(2)
+      Logger.step('Click on "Login" link')
+      cy.get('a[data-target="#logInModal"]').click()
+
+      Logger.stepNumber(3)
+      Logger.step(`Login with this credentials: "${usuario}/${contrasena}"`)
+      LoginActions.loginCompleto(usuario, contrasena)
+      Logger.verification(`Home should show "Welcome ${usuario}" text`)
+      cy.get('a#nameofuser').should('contain.text', usuario)
 
 
   })
