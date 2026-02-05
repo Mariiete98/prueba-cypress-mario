@@ -18,4 +18,8 @@ export class HomeActions {
     static clickProducto(producto){
         HomeElements.producto(producto).click();
     }
+
+    static verifyProductDisplayed(productName){
+        HomeElements.producto(productName).should('be.visible')
+    }
 }

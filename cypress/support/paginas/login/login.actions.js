@@ -6,16 +6,22 @@ export class LoginActions{
     static insertarUsuario(username){
         //LoginElements.obtenerCampos.username.type(username)
         // falla que a veces inserta y otras no, usar:
-        LoginElements.obtenerCampos.username.invoke('val', username)
+        //LoginElements.obtenerCampos.username.invoke('val', username)
+        LoginElements.obtenerCampos.username.should('be.visible').clear().type(username);
     }
     static insertarPassword(password){
         //LoginElements.obtenerCampos.password.type(password)
         // falla que a veces inserta y otras no, usar:
-        LoginElements.obtenerCampos.password.invoke('val', password)
+        //LoginElements.obtenerCampos.password.invoke('val', password)
+        LoginElements.obtenerCampos.password.should('be.visible').clear().type(password);
     }
     static clickLogin(){
-        LoginElements.obtenerBotones.login.click()
+        LoginElements.obtenerBotones.login.click({ force: true });
+        // AÑADIDO
+        //LoginElements.obtenerBotones.cerrar.click({ force: true });
+
     }
+ 
 
     // podrian ir en otro archivo para optimizar
 

@@ -5,6 +5,11 @@ import { LoginData } from "../../support/paginas/login/login.data";
 import { Logger } from "../../support/util/logger";
 
 describe(CommonPageData.testSuites.autenticacion, ()=>{ //este nombre se usara en muchos archivos, por eso se hace variable en common page
+    beforeEach(() => {
+        cy.clearCookies();
+        cy.clearLocalStorage();
+    });
+    
     it("Inicio de sesión válido", ()=>{
         Logger.stepNumber(1)
         Logger.step('Navegar a la página de inicio')
@@ -22,10 +27,12 @@ describe(CommonPageData.testSuites.autenticacion, ()=>{ //este nombre se usara e
         Logger.stepNumber(4)
         Logger.step('Hacer clic en Log In para iniciar sesión')
         LoginActions.clickLogin();
-        cy.wait(10000)
+       
         Logger.verification('Verificar que se redirige al usuario a la página de inicio')
-        //CommonPageActions.verifySignedUser(LoginData.validarCredenciales.username);
-        CommonPageActions.signedUser.should('be.visible').and('contain.text', LoginData.validarCredenciales.username); 
+        
+        CommonPageActions.verifySignedUser(LoginData.validarCredenciales.username);
+        
+        //CommonPageActions.signedUser.should('be.visible').and('contain.text', LoginData.validarCredenciales.username); 
         
     });
 
@@ -46,9 +53,8 @@ describe(CommonPageData.testSuites.autenticacion, ()=>{ //este nombre se usara e
         Logger.stepNumber(4)
         Logger.step('Hacer clic en Log In para iniciar sesión')
         LoginActions.clickLogin();
-
-
         Logger.verification('Verificar que se muestra un mensaje de error indicando que falla el inicio de sesión')
+
         LoginActions.verifyWrongPasswordMessage(); // debe saltar que es invalido
         
     });
