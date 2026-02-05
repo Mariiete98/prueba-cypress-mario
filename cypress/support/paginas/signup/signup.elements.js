@@ -18,8 +18,8 @@ export class SignupElements {
 
         // Selecciona un tag y el texto que contiene
 
-        get login() {
-            return cy.contains('button', 'Sign in');
+        get signup() {
+            return cy.contains('button', 'Sign up');
         },
         };
     }

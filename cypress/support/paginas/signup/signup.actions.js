@@ -1,3 +1,4 @@
+import { CommonPageActions } from "../common-page/common-page.actions";
 import { SignupElements } from "./signup.elements";
 
 export class SignupActions {
@@ -19,5 +20,9 @@ export class SignupActions {
         this.insertarUsuario(username);
         this.insertarPassword(password);
         this.clickSignup();
+    }
+
+    static verifySignUpSuccesfulMessageIsDisplayed(){
+        CommonPageActions.verifyAlert("SignUp succesful.");
     }
 }
