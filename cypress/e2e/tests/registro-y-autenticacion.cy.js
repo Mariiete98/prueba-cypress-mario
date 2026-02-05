@@ -3,6 +3,9 @@ import { CommonPageData } from "../../support/paginas/common-page/common-page.da
 import { Logger } from "../../support/util/logger";
 import { SignupActions } from "../../support/paginas/signup/signup.actions";
 
+const user = CommonPageActions.generateRandomString();
+const password = CommonPageActions.generateRandomString(7);
+
 describe(CommonPageData.testSuites.registroYAutenticacion, ()=>{ //este nombre se usara en muchos archivos, por eso se hace variable en common page
     it("Registro de usuario válido", ()=>{
         Logger.stepNumber(1)
@@ -15,8 +18,8 @@ describe(CommonPageData.testSuites.registroYAutenticacion, ()=>{ //este nombre s
 
         Logger.stepNumber(3)
         Logger.step('Completar todos los campos obligatorios con información válida')
-        SignupActions.insertarUsuario('random01') //dhfgjkdhgjfgj si funciona dhfgjdfhg
-        SignupActions.insertarPassword('random01')
+        SignupActions.insertarUsuario(user) //dhfgjkdhgjfgj si funciona, dhfgjdfhg,  random01 el del login
+        SignupActions.insertarPassword(password)
 
         Logger.stepNumber(4)
         Logger.step('Hacer click en Sign Up para registrar el usuario')
