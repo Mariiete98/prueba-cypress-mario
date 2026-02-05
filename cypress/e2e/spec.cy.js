@@ -62,7 +62,7 @@ describe('template spec', () => {
       CartaActions.clickEliminar('Nokia lumia 1520')
       cy.wait(20000) 
       
-     
+     //6a Place Order sin 
 
 
 
